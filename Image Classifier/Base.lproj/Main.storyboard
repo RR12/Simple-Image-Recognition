@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Classifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-yF-bjU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MPZ-yF-bjU" secondAttribute="height" multiplier="1:1" id="xOH-X8-o3q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No image selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="960-v4-J5Y">
+                                <rect key="frame" x="0.0" y="403" width="375" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.59209048750000004" green="0.59219515320000005" blue="0.59208387139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkn-Zf-9ZC">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.64705882349999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Bq-Id-YcG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Change Picture"/>
+                                <connections>
+                                    <action selector="onChangePictureButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ha5-RD-N6U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="960-v4-J5Y" firstAttribute="leading" secondItem="MPZ-yF-bjU" secondAttribute="leading" id="4SB-jO-E6h"/>
+                            <constraint firstItem="MPZ-yF-bjU" firstAttribute="top" secondItem="NFa-jT-QH6" secondAttribute="top" id="S4t-yw-o8r"/>
+                            <constraint firstItem="960-v4-J5Y" firstAttribute="top" secondItem="MPZ-yF-bjU" secondAttribute="bottom" constant="8" id="WIN-XY-AWP"/>
+                            <constraint firstItem="960-v4-J5Y" firstAttribute="trailing" secondItem="MPZ-yF-bjU" secondAttribute="trailing" id="YDl-dY-RyT"/>
+                            <constraint firstItem="NFa-jT-QH6" firstAttribute="trailing" secondItem="nkn-Zf-9ZC" secondAttribute="trailing" id="b28-OS-hUS"/>
+                            <constraint firstItem="MPZ-yF-bjU" firstAttribute="leading" secondItem="NFa-jT-QH6" secondAttribute="leading" id="epo-Fd-12t"/>
+                            <constraint firstItem="nkn-Zf-9ZC" firstAttribute="leading" secondItem="NFa-jT-QH6" secondAttribute="leading" id="hH1-Sh-tkl"/>
+                            <constraint firstItem="NFa-jT-QH6" firstAttribute="trailing" secondItem="MPZ-yF-bjU" secondAttribute="trailing" id="mSJ-9n-y57"/>
+                            <constraint firstItem="NFa-jT-QH6" firstAttribute="bottom" secondItem="nkn-Zf-9ZC" secondAttribute="bottom" id="n4D-h3-d6n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NFa-jT-QH6"/>
+                    </view>
+                    <connections>
+                        <outlet property="changePictureButton" destination="nkn-Zf-9ZC" id="4GQ-7H-neK"/>
+                        <outlet property="imageView" destination="MPZ-yF-bjU" id="cwf-l1-r2M"/>
+                        <outlet property="resultLabel" destination="960-v4-J5Y" id="NbP-Xt-ybd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
